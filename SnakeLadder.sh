@@ -1,3 +1,5 @@
 #!/bin/sh
-echo
-echo "           <<~~~~~~ Play SnaKe & Ladder## ~~~~~>>"
+
+#UserCase_1
+echo "Game Start"
+start=0
