@@ -46,3 +46,7 @@ echo "|----------------------------------------------------------|"
        done
 }
 MyBoard
+
+#UserCase_1
+echo "Game Start"
+start=0
