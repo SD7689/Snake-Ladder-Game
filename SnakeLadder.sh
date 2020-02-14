@@ -50,3 +50,13 @@ MyBoard
 #UserCase_1
 echo "Game Start"
 start=0
+
+#UserCase2
+RandomDice()
+{
+num=$(($RANDOM%6+1))
+return $num
+}
+RandomDice
+echo "     Dice Thrown-"
+echo "OutCome of Dice is:" $num
