@@ -22,16 +22,16 @@ res=$?
 n=$((RANDOM%3+1))
 	if(($n==1))
 	then
-		echo "NO PLAY, Player Stays At Same position "$position
+		echo "1. NO PLAY, Player Stays At Same position - "$position
 		echo
 	elif(($n==2))
 	then
-		echo "Ladder is Present At Position" $position
+		echo "2. Ladder is Present At Position - " $position
 		echo
 			position=$(($position+$res))
 	elif(($n==3))
 	then
-		echo "Snake is Present At Position" $position
+		echo "3. Snake is Present At Position - " $position
 		echo
 		if((position>=$res))
 		then
@@ -42,6 +42,7 @@ n=$((RANDOM%3+1))
 	fi
 	return $position
 }
+#UserCase_4
 while((p<100))
 do
 	Play
