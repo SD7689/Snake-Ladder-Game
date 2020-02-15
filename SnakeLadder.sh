@@ -1,9 +1,7 @@
 #!/bin/sh
-<<<<<<< HEAD
 echo
 echo "           <<~~~~~~ Play SnaKe & Ladder## ~~~~~>>"
 echo
-#UserCase_1
 MyBoard()
 {
 declare -A array
@@ -91,6 +89,7 @@ n=$((RANDOM%3+1))
 	then
 		echo "3. Awww!!,Snake is Present At Position - " $position
 		echo
+		#UserCase_4
 		if((position>=$res))
 		then
 			position=$(($position-$res))
@@ -101,12 +100,16 @@ n=$((RANDOM%3+1))
 	return $position
 }
 #UserCase_4
+p=0
 while((p<100))
 do
+	#UserCase_6
+	DiceRoll=$(($DiceRoll+1))
 	Play
 	p=$?
 done
 echo "<<~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~>>"
 echo "\m/    Player Position is At : $p    \m/" 
+echo "      No of Time Dice Rolled : $DiceRoll   " 
 echo "            Player Wins"
 echo "<<~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~>>"
