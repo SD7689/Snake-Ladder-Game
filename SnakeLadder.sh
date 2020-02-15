@@ -1,4 +1,5 @@
 #!/bin/sh
+<<<<<<< HEAD
 echo
 echo "           <<~~~~~~ Play SnaKe & Ladder## ~~~~~>>"
 echo
@@ -47,6 +48,8 @@ echo "|----------------------------------------------------------|"
 }
 MyBoard
 
+echo "<<=======WELCOME TO SNAKE & LADDER GAME IN SHELL SCRIPT=======>>"
+
 #UserCase_1
 echo "Game Start"
 position=0
@@ -73,12 +76,20 @@ n=$((RANDOM%3+1))
 		echo
 	elif(($n==2))
 	then
-		echo "2. Ladder is Present At Position - " $position
+		echo "2. Congo!!,Ladder is Present At Position - " $position
 		echo
 			position=$(($position+$res))
+			#UserCase_5
+			if(($position==100))
+			then
+				break
+			elif(($position>100))
+			then
+				position=$(($position-$res))
+			fi
 	elif(($n==3))
 	then
-		echo "3. Snake is Present At Position - " $position
+		echo "3. Awww!!,Snake is Present At Position - " $position
 		echo
 		if((position>=$res))
 		then
@@ -95,4 +106,7 @@ do
 	Play
 	p=$?
 done
-echo Player postion is: $p
+echo "<<~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~>>"
+echo "\m/    Player Position is At : $p    \m/" 
+echo "            Player Wins"
+echo "<<~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~>>"
