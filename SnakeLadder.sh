@@ -62,8 +62,8 @@ RandomDice
 echo "     Dice Thrown-"
 echo "OutCome of Dice is:" $num
 
-#UserCase_3
-Play()
+#UserCase_7_3
+Play2()
 {
 RandomDice
 res=$?
@@ -100,16 +100,44 @@ n=$((RANDOM%3+1))
 	return $position
 }
 #UserCase_4
-p=0
-while((p<100))
+p1=0
+p2=0
+flag=0
+while(($p1<100 && $p2<100))
 do
 	#UserCase_6
 	DiceRoll=$(($DiceRoll+1))
-	Play
-	p=$?
+	#UserCase_7
+	if(($flag==0))
+	then
+		Play2
+		p1=$?
+		count1=$(($count1+1))
+		echo "Current Postion of Player1 is: $p1"
+		echo 
+		flag=$(($flag+1))
+	else
+		Play2
+                p2=$?
+                count2=$(($count2+1))
+                echo "Current Postion of Player2 is: $p2"
+                echo
+                flag=$(($flag-1))
+	fi
 done
+echo "Total No of Times Dice Rolled is : $DiceRoll"
+if((p1==100))
+then
 echo "<<~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~>>"
-echo "\m/    Player Position is At : $p    \m/" 
-echo "      No of Time Dice Rolled : $DiceRoll   " 
-echo "            Player Wins"
+echo "\m/   Player1 Position is At : $p1   \m/" 
+echo " No of Times Player1 Dice Rolled : $count1" 
+echo "            PLAYER1 Wins"
 echo "<<~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~>>"
+elif((p2==100))
+then
+echo "<<~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~>>"
+echo "\m/   Player2 Position is At : $p2   \m/"
+echo " No of Times Player2 Dice Rolled : $count2"
+echo "            PLAYER2 Wins"
+echo "<<~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~>>"
+fi
