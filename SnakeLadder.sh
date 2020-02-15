@@ -38,7 +38,7 @@ n=$((RANDOM%3+1))
 		then
 			echo "Player Stays at Same Postion" 
 		else
-			postion=$(($(($postion+$res))))
+			postion=$(($(($postion-$res))))
 		 fi
 	fi
 	return $postion
